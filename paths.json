@@ -1,0 +1,79 @@
+{
+ "src":{
+  "video": {
+   "path": "./src/video/**/*.?(mp4|avi|asf|m4v|mov|mpg|mpeg|wmv|webm)"
+  },
+  "font": {
+   "path": "./src/font/**/*.?(woff|woff2|ttf||eot|svg|txt|html|css)"
+  },
+  "image": {
+   "path": "./src/image/**/*.?(png|jpg|jpeg|webp|gif|svg|webmanifest|ico)"
+  },
+  "sprite": {
+   "path": "./src/image/sprite/**/*.svg"
+  },
+  "page": {
+   "path": "./src/view/page/**/*.*",
+   "pathFolder": "./src/view/page/",
+   "pathPage": "./src/view/page/**/*.html",
+   "pathStyles": "./src/view/page/**/*.?(scss|sass|css)",
+   "pathScripts": "./src/view/page/**/*.js"
+  },
+  "viewIncludes": {
+   "path": "./src/view/iclude/**/*.*",
+   "pathFolder": "./src/view/include/",
+   "pathPageFolder": "./src/view/include/page/",
+   "pathPage": "./src/view/include/page/**/*.html",
+   "pathStyleFolder": "./src/view/include/style/",
+   "pathStyle": "./src/view/include/style/**/*.?(scss|sass|css)",
+   "pathScriptFolder": "./src/view/include/script/",
+   "pathScript": "./src/view/include/script/**/*.js"
+  },
+  "block": {
+   "path": "./src/module/block/**/*.*",
+   "pathPage": "./src/module/block/**/*.html",
+   "pathStyles":  "./src/module/block/**/*.?(scss|sass|css)",
+   "pathScripts": "./src/module/block/**/*.js"
+  },
+  "moduleIncludes": {
+   "pathPageFolder": "./src/module/include/page/" ,
+   "pathPage": "./src/module/include/page/**/*.html", 
+   "pathStyle": "./src/module/include/style/**/*.?(scss|sass|css)", 
+   "pathScript": "./src/module/include/script/**/*.js" 
+  },
+  "globalStyle": {
+   "path": "./src/_global.?(scss|sass|css)"
+  },
+  "globalScript": {
+   "path": "./src/_global.js"
+  }
+ },
+ "dist": {
+  "path": "./dist/**/*.*",
+  "pathFolder": "./dist/",
+  "pathMaps": "./dist/**/*.map",
+  "style": {
+   "path": "./dist/style/*.*",
+   "pathFolder": "./dist/style/"
+  },
+  "script": {
+   "path": "./dist/script/*.*",
+   "pathFolder": "./dist/script/"
+  },
+  "font": {
+   "path": "./dist/font/*.*",
+   "pathFolder": "./dist/font/"
+  },
+  "image": {
+   "path": "./dist/image/*.*",
+   "pathFolder": "./dist/image/"
+  },
+  "video": {
+   "pathFolder": "./dist/video/"
+  },
+  "sprite": {
+   "pathFolder": "./dist/image/",
+   "pathSVG": "./dist/image/sprite.svg"
+  }
+ }
+}

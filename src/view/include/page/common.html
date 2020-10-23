@@ -1,0 +1,24 @@
+
+{% macro openGraph(openGraphObject) %}
+ {# Url, type, title, desc, img, imgW, imgH, locale #}
+ <!-- Start OpenGraph -->
+ {% if openGraphObject.url %}<meta property="og:url" content="{{openGraphObject.url}}"/> {% endif %}
+ {% if  openGraphObject.type %}<meta property="og:type" content="{{openGraphObject.type}}" /> 
+ {% else %}<meta property="og:type" content="article" /> {% endif %}
+ {% if openGraphObject.title %}<meta property="og:title" content="{{openGraphObject.title}}" />{% else %}<meta property="og:title" content="New site" /> {% endif %}
+ {% if openGraphObject.desc %}<meta property="og:description" content="{{openGraphObject.desc}}" />
+ {% else %}<meta property="og:description" content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, aliquid." />{% endif %}
+ {% if openGraphObject.img %}<meta property="og:image" content="{{openGraphObject.img}}" />{% if openGraphObject.imgW %}<meta property="og:image:width" content="{{openGraphObject.imgW}}"/>  
+  {% endif %}{% if openGraphObject.imgH %}<meta property="og:image:height" content="{{openGraphObject.imgH}}"/>  {% endif %}{% endif %}
+ {% if openGraphObject.locale %}<meta property="og:locale" content="{{openGraphObject.locale}}" />{% else %}<meta property="og:locale" content="en_GB" />{% endif %}
+ <!-- End OpenGraph -->
+{% endmacro %}
+
+{% macro favicons() %}
+ <!-- Start favicons -->
+ <link rel="apple-touch-icon" sizes="180x180" href="./image/favicon/apple-touch-icon.png">
+ <link rel="icon" type="image/png" sizes="32x32" href="./image/favicon/favicon-32x32.png">
+ <link rel="icon" type="image/png" sizes="16x16" href="./image/favicon/favicon-16x16.png">
+ <link rel="manifest" href="./image/favicon/site.webmanifest">
+ <!-- End favicons -->
+{% endmacro %}

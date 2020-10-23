@@ -1,0 +1,14 @@
+{
+ "ftp": {
+  "dest": "mydest",
+  "host": "myhost",
+  "user": "mynickname",
+  "password": "mypassword"
+ },
+ "clean": {
+  "delay": 1000
+ },
+ "server": {
+  "port": 3000
+ }
+}
