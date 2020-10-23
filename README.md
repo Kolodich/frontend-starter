@@ -6,7 +6,7 @@
 *  [Nunjucks.js](https://mozilla.github.io/nunjucks/templating.html#include) для сборки HTML файлов 📕
 * Препроцессор [SASS](https://sass-lang.com/documentation) и [PostCSS](https://postcss.org/) 📘 
 * [Webpack](https://webpack.js.org/) для сборки JavaScript 📙
-    * [Babel](https://babeljs.io/) для поддержки современного JavaScript (EC6) 
+* [Babel](https://babeljs.io/) для поддержки современного JavaScript (EC6) 
 * Отправка проекта на хостинг по FTP
 
 ## 🛠️ Установка
