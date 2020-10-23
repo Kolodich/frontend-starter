@@ -117,6 +117,7 @@ entry: {
 ## ✉️ Контакты
 
 ВКонтатке - [@rkolodich](https://vk.com/rkolodich)
+
 Telegram - [@rkolodich](https://t.me/rkolodich)
 ## 📌 Полезные ссылки
 
