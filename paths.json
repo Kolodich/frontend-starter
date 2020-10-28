@@ -31,6 +31,7 @@
   },
   "block": {
    "path": "./src/module/block/**/*.*",
+   "pathFolder": "./src/module/block/",
    "pathPage": "./src/module/block/**/*.html",
    "pathStyles":  "./src/module/block/**/*.?(scss|sass|css)",
    "pathScripts": "./src/module/block/**/*.js"

@@ -1,0 +1,28 @@
+@if index($hamburger-themes, emphatic){
+ &emphatic{
+  .hamburger__inner{
+   transition: $h-duration/2 $h-duration/2;
+   &:after, &:before{
+    transition: left $h-duration*1/2 $h-duration*1/2, top 0s $h-duration*1/2, transform $h-duration*1/2;
+   }
+  }
+ }
+ &emphatic.hamburger_active{
+  .hamburger__inner{
+   background-color: transparent;
+   transition: $h-duration/2;
+   &:after, &:before{
+    transition: left $h-duration*1/2, top 0s $h-duration*1/2, transform $h-duration*1/2 $h-duration*1/2;
+    top: -$h-height+$h-line-height -$h-padding-y;
+   }
+   &:before{
+    left: $h-padding-x+$h-width;
+    transform: translate(-$h-padding-x -$h-width, $h-height -$h-line-height+$h-padding-y) rotate(-45deg);
+   }
+   &:after{
+    left: -$h-padding-x -$h-width;
+    transform: translate($h-padding-x+$h-width, $h-height -$h-line-height+$h-padding-y) rotate(45deg);
+   }
+  }
+ }
+}

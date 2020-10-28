@@ -1,0 +1,38 @@
+@if index($hamburger-themes, elastic){
+ &elastic{
+  .hamburger__inner, .hamburger__inner:after, .hamburger__inner:before{
+   
+  }
+  .hamburger__inner{
+   transition: $h-duration/2 background-color  $h-duration/2;
+   &:after, &:before{
+    transition: top $h-duration/2 $h-duration/2,
+                transform $h-duration/2 cubic-bezier(0.500, -1.5, 0.500, 0);
+   }
+   &:before{
+    
+   }
+   &:after{
+    
+   }
+  }
+ }
+ &elastic.hamburger_active{
+  .hamburger__inner{
+   background-color: transparent;
+   transition: $h-duration/2 background-color $h-duration/2;
+   &:after, &:before{
+    top: 0;
+    transition: top $h-duration/2,
+                transform $h-duration/2 $h-duration/2 cubic-bezier(0.500, 0, 0.500, 2.5);
+   }
+   &:before{
+    transform: rotate(45deg);
+    // easeOutBounce
+   }
+   &:after{
+    transform: rotate(-45deg);
+   }
+  }
+ }
+}

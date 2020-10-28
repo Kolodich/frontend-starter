@@ -1,0 +1,35 @@
+@if index($hamburger-themes, collapse){
+ &collapse{
+  .hamburger__inner{
+   top: $h-height - $h-line-height;
+   transition: transform $h-duration/2, background-color 0s $h-duration/2;
+   &:before, &:after{
+    top: 0;
+    transition: top $h-duration/2 $h-duration/2, transform $h-duration/2;
+   }
+   &:before{
+    top: -$h-height/2 + $h-line-height/2;
+   }
+   &:after{
+    top:  -$h-height + $h-line-height;
+   }
+  }
+ }
+ &collapse.hamburger_active{
+  .hamburger__inner{
+   transition: transform $h-duration/2 $h-duration/2, background-color 0s $h-duration/2;
+   background-color: transparent;
+   transform: translateY(-$h-height/2 + $h-line-height/2);
+   &:before, &:after{
+    top: 0;
+    transition: top $h-duration/2, transform $h-duration/2 $h-duration/2;
+   }
+   &:before{
+    transform: rotate(45deg);
+   }
+   &:after{
+    transform: rotate(-45deg);
+   }
+  }
+ }
+}

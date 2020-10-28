@@ -1,0 +1,93 @@
+$h-padding-x: 2em;
+$h-padding-y: 2em;
+$h-width: 7em;
+$h-height: 6em;
+$h-color: red;
+$h-duration: .32s;
+$h-line-border-radius: 0em;
+$h-line-height: 1em;
+$h-hover-opacity: 0.7;
+$h-hover-duration: .2s;
+$h-focus-outline: 1px solid red;
+
+$hamburger-themes: (
+ boring,
+ collapse,
+ emphatic,
+ spin,
+ spring,
+ squeeze,
+ elastic,
+ slider-r, slider-l, stand-r, stand-l,
+ spin-r, spin-l,
+ arrow-r, arrow-l, arrow-t, arrow-b,
+ arrow-alt-r, arrow-alt-l, arrow-alt-t, arrow-alt-b,
+ arrow-spin-r, arrow-spin-l, arrow-spin-t, arrow-spin-b,
+ plus-boring,
+ plus-vanish,
+ minus-boring,
+ minus-vanish,
+);
+
+.hamburger{
+ padding: $h-padding-y $h-padding-x;
+ display: inline-block;
+ cursor: pointer;
+ transition: $h-duration;
+ // Normalize (<button>)
+ background-color: transparent;
+ font: inherit;
+ color: inherit;
+ text-transform: none;
+ border: 0;
+ margin: 0;
+ overflow: hidden;
+ @if  $h-hover-opacity < 1{
+  &:hover, &:focus{
+   opacity: $h-hover-opacity;
+  }
+ }
+ &:focus{
+  outline: $h-focus-outline;
+ }
+ &__box{
+  position: relative;
+  width: $h-width;
+  height: $h-height;
+ }
+ &__inner{
+  top: $h-height/2 - $h-line-height/2;
+  &, &:after, &:before{
+   width: 100%;
+   position: absolute;
+   height: $h-line-height;
+   background-color: $h-color;
+  }
+  &:after, &:before{
+   content: '';
+  }
+  &:before{
+   top: $h-height/2 - $h-line-height/2;
+   left: 0;
+  }
+  &:after{
+   top: -$h-height/2 + $h-line-height/2;
+   left: 0;
+  }
+ }
+ &_theme_{
+  @import './themes/arrow-alt';
+  @import './themes/arrow-spin';
+  @import './themes/arrow';
+  @import './themes/boring';
+  @import './themes/elastic';
+  @import './themes/emphatic';
+  @import './themes/minus';
+  @import './themes/plus';
+  @import './themes/slider';
+  @import './themes/spin';
+  @import './themes/spring';
+  @import './themes/squeeze';
+  @import './themes/stand'; 
+ }
+}

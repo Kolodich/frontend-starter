@@ -1,0 +1,32 @@
+@if index($hamburger-themes, boring){
+ &boring{
+  .hamburger__inner, .hamburger__inner:after, .hamburger__inner:before{
+   
+  }
+  .hamburger__inner{
+   &:after, &:before{
+    
+   }
+   &:before{
+    
+   }
+   &:after{
+    
+   }
+  }
+ }
+ &boring.hamburger_active{
+  .hamburger__inner{
+   background-color: transparent;
+   &:after, &:before{
+    top: 0;
+   }
+   &:before{
+    transform: rotate(45deg);
+   }
+   &:after{
+    transform: rotate(-45deg);
+   }
+  }
+ }
+}

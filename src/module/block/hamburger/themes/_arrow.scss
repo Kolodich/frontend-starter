@@ -1,0 +1,94 @@
+$h-arrow-width: 50%;
+@if index($hamburger-themes, arrow-r){ 
+ &arrow-r{
+  .hamburger__inner{
+   &:before{transform-origin: right bottom;}
+   &:after{transform-origin: right top;    }
+   &:after, &:before{
+    left: auto;right: 0;
+    transition: top $h-duration , width $h-duration, transform $h-duration;
+   }
+  }
+ }
+ 
+ &arrow-r.hamburger_active{
+  .hamburger__inner{
+   &:before{transform: translateY($h-line-height/5) rotate(45deg);}
+   &:after{transform: translateY(-$h-line-height/5) rotate(-45deg);}
+   &:after, &:before{
+    top: 0;
+    width: $h-arrow-width;
+   }
+  }
+ }
+}
+
+@if  index($hamburger-themes, arrow-l){
+ &arrow-l{
+  .hamburger__inner{
+   &:after, &:before{
+    transition: top $h-duration , width $h-duration, transform $h-duration;
+   }
+   &:before{transform-origin: left bottom;}
+   &:after{transform-origin: left top;  }
+  }
+ }
+ &arrow-l.hamburger_active{
+  .hamburger__inner{
+   &:before{transform: translateY($h-line-height/5) rotate(-45deg);}
+   &:after{transform: translateY(-$h-line-height/5) rotate(45deg);}
+   &:after, &:before{
+    top: 0;
+    width: $h-arrow-width;
+    transition: top $h-duration , width $h-duration, transform $h-duration;
+   }
+  }
+ }
+}
+
+@if index($hamburger-themes, arrow-t){
+ &arrow-t{
+  transition: $h-duration;
+  .hamburger__inner{
+   &:before{transform-origin: left bottom;}
+   &:after{transform-origin: left top;  }
+   &:after, &:before{transition: top $h-duration , width $h-duration, transform $h-duration;}
+  }
+ }
+ &arrow-t.hamburger_active{
+  transform: rotate(90deg);
+  .hamburger__inner{
+   &:after, &:before{
+    top: 0;
+    width: $h-arrow-width;
+    transition: top $h-duration , width $h-duration, transform $h-duration;
+   }
+   &:before{transform: translateY($h-line-height/5) rotate(-45deg);}
+   &:after{transform: translateY(-$h-line-height/5) rotate(45deg);}
+  }
+ }
+ 
+}
+
+@if index($hamburger-themes, arrow-b) {
+ &arrow-b{
+  transition: $h-duration;
+  .hamburger__inner{
+   &:before{transform-origin: left bottom;}
+   &:after{transform-origin: left top;  }
+   &:after, &:before{transition: top $h-duration , width $h-duration, transform $h-duration;}
+  }
+ }
+ &arrow-b.hamburger_active{
+  transform: rotate(-90deg);
+  .hamburger__inner{
+   &:after, &:before{
+    top: 0;
+    width: $h-arrow-width;
+    transition: top $h-duration , width $h-duration, transform $h-duration;
+   }
+   &:before{transform: translateY($h-line-height/5) rotate(-45deg);}
+   &:after{transform: translateY(-$h-line-height/5) rotate(45deg);}
+  }
+ }
+}

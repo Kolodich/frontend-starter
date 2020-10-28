@@ -1,0 +1,33 @@
+@if index($hamburger-themes, plus-boring){
+ &plus-boring.hamburger_active{
+  .hamburger__inner{
+   &:after, &:before{
+    top: 0;
+   }
+   &:after{
+    transform: rotate(90deg);    
+   }
+  }
+ }
+}
+
+@if index($hamburger-themes, plus-vanish){
+ &plus-vanish{
+  .hamburger__inner{
+   &:after, &:before{
+    transition: top $h-duration/2  $h-duration/2, transform $h-duration/2;
+   }
+  }
+ }
+ &plus-vanish.hamburger_active{
+  .hamburger__inner{
+   &:after, &:before{
+    top: 0;
+    transition: top $h-duration/2, transform $h-duration/2 $h-duration/2;
+   }
+   &:after{
+    transform: rotate(90deg);    
+   }
+  }
+ }
+}

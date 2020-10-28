@@ -1,0 +1,26 @@
+@if index($hamburger-themes, squeeze){
+ &squeeze{
+  .hamburger__inner{
+   transition: $h-duration/2 background-color $h-duration/2;
+   &:after, &:before{
+    transition: $h-duration/2 $h-duration/2 top, transform $h-duration/2;
+   }
+  }
+ }
+ &squeeze.hamburger_active{
+  .hamburger__inner{
+   background-color: transparent;
+   transition: $h-duration/2 background-color;
+   &:after, &:before{
+    top: 0;
+    transition: $h-duration/2 top, transform $h-duration/2 $h-duration/2;
+   }
+   &:before{
+    transform: rotate(45deg);
+   }
+   &:after{
+    transform: rotate(-45deg);
+   }
+  }
+ }
+}

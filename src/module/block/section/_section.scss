@@ -1,0 +1,26 @@
+$s-use-themes: true;
+$s-use-sizes: true;
+
+.section{
+ padding: calcFluidSize(20, 40) 0;
+ @if $s-use-sizes {
+  &_size{
+   &_big{
+    padding: calcFluidSize(30, 60) 0;
+   }
+   &_small{
+    padding: calcFluidSize(10, 20) 0;
+   }
+  }
+ }
+ @if $s-use-themes {
+  &_theme{
+   &_primary{
+    background-color: var(--primary);
+   }
+   &_secondary{
+    background-color: var(--secondary);
+   }
+  }
+ }
+}

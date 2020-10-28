@@ -1,0 +1,26 @@
+@if index($hamburger-themes, minus-boring){
+ &minus-boring.hamburger_active{
+  .hamburger__inner{
+   &:after, &:before{
+    top: 0;
+   }
+  }
+ }
+}
+
+@if index($hamburger-themes, minus-vanish){
+ &minus-vanish{
+  .hamburger__inner{
+   &:after, &:before{
+    transition: $h-duration;
+   }
+  }
+ }
+ &minus-vanish.hamburger_active{
+  .hamburger__inner{
+   &:after, &:before{
+    top: 0;
+   }
+  }
+ }
+}

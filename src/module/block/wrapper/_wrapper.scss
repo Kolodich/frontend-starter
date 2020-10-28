@@ -1,0 +1,23 @@
+$w-max-width: 1170px;
+$w-max-width-xl: 992px;
+$w-max-width-lg: 768px;
+$w-max-width-md: 576px;
+
+.wrapper{
+ font-size: 20px;
+ max-width: $w-max-width;
+ margin: 0 auto;
+ padding: 0 15px;
+ @include md-xl{
+  max-width: $w-max-width-xl;
+ }
+ @include md-lg{
+  max-width: $w-max-width-lg;
+ }
+ @include md-md{
+  max-width: $w-max-width-md;
+ }
+ @include md-sm{
+  max-width: 100%;
+ }
+}

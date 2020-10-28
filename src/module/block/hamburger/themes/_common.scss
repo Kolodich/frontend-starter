@@ -1,0 +1,28 @@
+@if index($hamburger-themes, common){
+ &common{
+  .hamburger__inner{
+   &:after, &:before{
+    
+   }
+   &:before{
+    
+   }
+   &:after{
+    
+   }
+  }
+ }
+ &common.hamburger_active{
+  .hamburger__inner{
+   &:after, &:before{
+    
+   }
+   &:before{
+
+   }
+   &:after{
+    
+   }
+  }
+ }
+}

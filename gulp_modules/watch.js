@@ -7,6 +7,7 @@ const { script } = require('./script');
 const { sprite } = require('./sprite');
 const { style } = require('./style');
 const { video } = require('./video');
+const { createPage, createBlock } = require('./create');
 
 function watch(done) {
  gulp.watch([
@@ -16,12 +17,14 @@ function watch(done) {
  ], page);
  gulp.watch([
   paths.src.page.pathStyles,
+  paths.src.block.pathStyles,
   paths.src.moduleIncludes.pathStyle,
   paths.src.viewIncludes.pathStyle,
   paths.src.globalStyle.path
  ], style);
  gulp.watch([
   paths.src.page.pathScripts,
+  paths.src.block.pathScripts,
   paths.src.moduleIncludes.pathScript,
   paths.src.viewIncludes.pathScript,
   paths.src.globalScript.path
@@ -38,6 +41,8 @@ function watch(done) {
  gulp.watch([
   paths.src.sprite.path
  ], sprite);
+ gulp.watch(paths.src.page.pathFolder+"*").on('addDir', () =>{createPage()});
+ gulp.watch(paths.src.block.pathFolder+"*").on('addDir', () =>{createPage()});
  done();
 }
 

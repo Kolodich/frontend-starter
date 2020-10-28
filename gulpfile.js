@@ -10,8 +10,12 @@ const { clean } = require("./gulp_modules/clean");
 const { server } = require("./gulp_modules/server");
 const { watch } = require("./gulp_modules/watch");
 const { ftp } = require("./gulp_modules/ftp");
-const build = gulp.series(clean, gulp.parallel(page, style, script, video, font, image, sprite));
+const { createPage, createBlock } = require('./gulp_modules/create');
 
+const build = gulp.series(
+ gulp.parallel(clean, (done)=>{createBlock; done();}, (done)=>{createPage; done();}), 
+ gulp.parallel(page, style, script, video, font, image, sprite)
+);
 module.exports.default =  build;
 module.exports.server = gulp.series(build, gulp.parallel(server, watch));
 module.exports.ftp =  gulp.series(ftp);
