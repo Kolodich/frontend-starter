@@ -2,6 +2,8 @@
 @import '../../../font/Roboto/stylesheet.css';
 //* _global.scss 
 @import '../../../global';
+// Incluede
+@import '../../include/style/common';
 //* Normalize
 @import '../../include/style/normalize.scss';
 //* Root, html, body
@@ -13,5 +15,3 @@
 @import '../../../module/block/section/section';
 // @import '../../../module/block/hamburger/hamburger.scss';
 //* Blocks
-
-//* Custom code

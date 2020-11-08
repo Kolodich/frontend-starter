@@ -4,10 +4,9 @@
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
-    "c": "gulp c",
+    "dev": "gulp dev",
     "build": "gulp",
     "build:ftp": "gulp ftp",
-    "dev": "gulp server",
     "build:page": "gulp page",
     "build:style": "gulp style",
     "build:script": "gulp script",
@@ -17,7 +16,7 @@
     "build:font": "gulp font",
     "build:clean": "gulp clean"
   },
-  "author": "Ruslan Kolodich",
+  "author": "Kolodich Ruslan Alexandrovich",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.12.3",

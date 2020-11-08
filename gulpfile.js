@@ -17,8 +17,8 @@ const build = gulp.series(
  gulp.parallel(page, style, script, video, font, image, sprite)
 );
 module.exports.default =  build;
-module.exports.server = gulp.series(build, gulp.parallel(server, watch));
-module.exports.ftp =  gulp.series(ftp);
+module.exports.dev = gulp.series(build, gulp.parallel(server, watch));
+module.exports.ftp =  gulp.series(build, ftp);
 module.exports.page = page;
 module.exports.style = style;
 module.exports.sprite = sprite;

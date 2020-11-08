@@ -1,69 +1,63 @@
 // Variables
-$breakpoint-xl: 1200px;
-$breakpoint-lg: 992px;
-$breakpoint-md: 768px;
-$breakpoint-sm: 576px;
+$bp-xl: 1200px;
+$bp-lg: 992px;
+$bp-md: 768px;
+$bp-sm: 576px;
 
-// Mixins
-@mixin root{
- :root{
-  --pink: #FFC0CB;
-  --red: #f73c4f;
-  --orange: #e59c24;
-  --yellow: #fff707;
-  --khaki: #f0e68c;
-  --green: #28a745;
-  --pine: #01796f;
-  --cyan: #37B6CE; 
-  --blue: #0475ee;
-  --purple: #6f42c1;
-  --indigo: 	#4B0082;
-  --white: #fff;
-  --gray: #ccc;
-  --dark-gray: #959595;
-  --dark: #333;
-  --black: #000;
-  --primary: #574DD8;
-  --secondary: #A93CD4;
-  color: #333;
-  --gradient: linear-gradient(45deg, var(--cyan) 0%, var(--primary) 50%, var(--secondary) 100%);
-  line-height: 1.5;
-  font-size: 10px;
-  --fonts-minor: 'Times New Roman', Times, serif;
-  --fonts-major: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  --transition-major: 0.2s all ease-in-out;
-  --transition-minor: 0.4s all ease;
- }
+// Functions
+@function adaptiveClamp($f-min: 16, $f-max: 32, $v-normal: 1920, $units: px) {
+ $middle: (100 * $f-max) / $v-normal;
+ @return clamp($f-min + $units, $middle, $f-max + $units);
 }
 
+@function adaptiveCalc($f-min: 12, $f-max: 16, $v-min: 320, $v-max: 1920, $units: px) {
+ $k: ($f-max - $f-min)/($v-max - $v-min);
+ $b: $f-min - $k * $v-min;
+ $b: $b + $units;
+ @return calc( #{$k} * 100vw + #{$b} );
+}
+
+@function widthToHeight($width: 1920, $height: 1080){
+ @return (100 * $width) / $height;
+}
+
+@function heightToWidth($width: 1920, $height: 1080){
+ @return (100 * $height) / $width;
+}
+
+// Mixins
 @mixin md-xl {
- @media screen and (max-width: $breakpoint-xl){
+ @media screen and (max-width: $bp-xl){
   @content;
  }
 }
 
 @mixin md-lg {
- @media screen and (max-width: $breakpoint-lg){
+ @media screen and (max-width: $bp-lg){
   @content;
  }
 }
 
 @mixin md-md {
- @media screen and (max-width: $breakpoint-md){
+ @media screen and (max-width: $bp-md){
   @content;
  }
 }
 
 @mixin md-sm {
- @media screen and (max-width: $breakpoint-sm){
+ @media screen and (max-width: $bp-sm){
   @content;
  }
 }
 
-// Functions
-@function calcFluidSize($f-min, $f-max, $v-min: 320, $v-max: 1920, $units: px) {
- $k: ($f-max - $f-min)/($v-max - $v-min);
- $b: $f-min - $k * $v-min;
- $b: $b + $units;
- @return calc( #{$k} * 100vw + #{$b} );
+@mixin adaptiveImg($width: 1920, $height: 1080){
+ position: relative;
+ padding-right: 100%;
+ padding-bottom: heightToWidth($width, $height)#{"%"};
+}
+
+@mixin abcoluteCenter($transform: ""){
+ left: 50%;
+ top: 50%;
+ transform: translate(-50%, -50%) #{$transform};
 }

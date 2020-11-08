@@ -1,6 +1,34 @@
 @mixin root{
  :root{
-  font-family: Roboto, Geneva, Verdana, sans-serif;
+  --pink: #FFC0CB;
+  --red: #f73c4f;
+  --orange: #e59c24;
+  --yellow: #fff707;
+  --khaki: #f0e68c;
+  --green: #28a745;
+  --pine: #01796f;
+  --cyan: #37B6CE; 
+  --blue: #0475ee;
+  --purple: #6f42c1;
+  --indigo: 	#4B0082;
+  --white: #fff;
+  --gray: #ccc;
+  --dark-gray: #959595;
+  --dark: #333;
+  --black: #000;
+  --primary: #574DD8;
+  --secondary: #A93CD4;
+  --gradient: linear-gradient(45deg, var(--cyan) 0%, var(--primary) 50%, var(--secondary) 100%);
+  --fonts-minor: 'Times New Roman', Times, serif;
+  --fonts-major: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --transition-major: 0.2s all ease-in-out;
+  --transition-minor: 0.4s all ease;
+  --bp-sm: #{$bp-sm};
+  --bp-md: #{$bp-md};
+  --bp-lg: #{$bp-lg};
+  --bp-xl: #{$bp-xl};
+  line-height: 1.5;
   font-size: 10px;
+  color: var(--dark);
  }
 }

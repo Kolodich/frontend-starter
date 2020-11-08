@@ -11,23 +11,36 @@ const debug = require('gulp-debug');
 const boxSize = !! argv.boxSize ? argv.boxSize : 32;
 
 function sprite(done) {
-  const spriteConfig = {
+  let SPRITE_CONFIG = {
+    expand: true,
+    svg: { 
+      xmlDeclaration: true, 
+      doctypeDeclaration: false, 
+      namespaceIDs: false, 
+      namespaceClassnames: false,
+      dimensionAttributes: false
+    },
     shape: {
       dimension: {
         maxWidth: boxSize,
-        maxHeight: boxSize
-      },
+        maxHeight: boxSize,
+        attributes: false,
+      },  
+      'spacing': {
+        'padding': 10,
+        'box': 'content'
+      }
     },
     mode: {
       view: { 
-        bust: false,
+        bust: true,
         dest: './' 
       },
     }
   };
  gulp.src(paths.src.sprite.path)
   .pipe(plumber())
-  .pipe(svgSprite(spriteConfig))
+  .pipe(svgSprite(SPRITE_CONFIG))
   .pipe(rename(function (p) {
    p.dirname = "";
    p.basename = "sprite";

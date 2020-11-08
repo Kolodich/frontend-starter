@@ -42,7 +42,7 @@ function watch(done) {
   paths.src.sprite.path
  ], sprite);
  gulp.watch(paths.src.page.pathFolder+"*").on('addDir', () =>{createPage()});
- gulp.watch(paths.src.block.pathFolder+"*").on('addDir', () =>{createPage()});
+ gulp.watch(paths.src.block.pathFolder+"*").on('addDir', () =>{createBlock()});
  done();
 }
 
